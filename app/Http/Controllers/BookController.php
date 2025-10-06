@@ -8,8 +8,17 @@ use Illuminate\Support\Facades\DB;
 
 class bookController extends Controller
 {
-    public function index(){
+    public function index(request $request){
+        
+        if($request-> has("search")){
+        $books=Book::
+        where("title", "like", "%".$request->get("search")."%")
+       ->orwhere("author", "like", "%".$request->get("search")."%")
+       ->paginate(10);
+        }
+        else{
           $books=Book::paginate(10);
+        }
 
          return view("books.index")->with("books", $books);
 }

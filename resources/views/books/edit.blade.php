@@ -35,6 +35,6 @@
         <input type="text" class="form-control" name="price" value="{{ old('price', $book->price) }}">
 <div>{{ $errors->first('price') }}</div>
     </div>
-  <button type="submit" class="btn btn-primary"><i class="bi bi-file-arrow-up"></i>Submit</button>
+  <button type="submit" class="btn btn-primary"><i class="bi bi-file-arrow-up"></i> Submit</button>
 </form>
 @endsection
